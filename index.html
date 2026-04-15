@@ -93,9 +93,9 @@
         .lang-btn.active { background: rgba(255,255,255,0.12); color: #fff; }
         .lang-btn:not(.active) { background: transparent; color: #555; }
         .lang-btn:hover:not(.active) { color: #999; }
-        [lang="es"] { display: none; }
-        body.es [lang="es"] { display: block; }
-        body.es [lang="en"] { display: none; }
+        .container [lang="es"] { display: none; }
+        body.es .container [lang="es"] { display: block; }
+        body.es .container [lang="en"] { display: none; }
 
         /* App Store badge */
         .app-store-badge {
