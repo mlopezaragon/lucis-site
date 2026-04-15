@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lucis - Control LED WiFi</title>
+    <title>Lucis - WiFi LED Controller</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
@@ -22,28 +22,69 @@
         .nav a:hover { color: #e5e5e5; }
         .divider { height: 1px; background: #222; margin: 48px 0; }
         .footer { margin-top: 48px; font-size: 13px; color: #444; }
+        .lang-toggle { display: flex; gap: 8px; margin-bottom: 40px; }
+        .lang-btn {
+            font-size: 13px; font-weight: 500; padding: 4px 12px;
+            border-radius: 6px; border: none; cursor: pointer;
+            transition: all 0.2s ease;
+        }
+        .lang-btn.active { background: rgba(255,255,255,0.12); color: #fff; }
+        .lang-btn:not(.active) { background: transparent; color: #555; }
+        .lang-btn:hover:not(.active) { color: #999; }
+        [lang="es"] { display: none; }
+        body.es [lang="es"] { display: block; }
+        body.es [lang="en"] { display: none; }
     </style>
 </head>
 <body>
     <div class="container">
         <h1>Lucis</h1>
-        <p class="subtitle">Control de tiras LED WiFi desde la barra de men&uacute; de macOS.</p>
+
+        <div class="lang-toggle">
+            <button class="lang-btn active" id="btn-en" onclick="setLang('en')">English</button>
+            <button class="lang-btn" id="btn-es" onclick="setLang('es')">Espa&ntilde;ol</button>
+        </div>
+
+        <p class="subtitle" lang="en">WiFi LED strip control from the macOS menu bar.</p>
+        <p class="subtitle" lang="es">Control de tiras LED WiFi desde la barra de men&uacute; de macOS.</p>
 
         <div class="nav">
-            <a href="privacy.html">Privacidad</a>
-            <a href="support.html">Soporte</a>
+            <a href="privacy.html" lang="en">Privacy</a>
+            <a href="privacy.html" lang="es">Privacidad</a>
+            <a href="support.html" lang="en">Support</a>
+            <a href="support.html" lang="es">Soporte</a>
         </div>
 
         <div class="divider"></div>
 
-        <h2>Funcionalidades</h2>
-        <p>Encender, apagar y ajustar el brillo de tus luces LED WiFi con un clic. Colores, efectos, escenas guardadas, horarios programados y activadores del sistema. Atajo de teclado global y compatibilidad con Siri. Compatible con Magic Home, MagicHue y controladores LEDENET.</p>
+        <div lang="en">
+            <h2>Features</h2>
+            <p>Turn on, off, and adjust the brightness of your WiFi LED lights in one click. Colors, effects, saved scenes, scheduled timers, and system triggers. Global keyboard shortcut and Siri support. Compatible with Magic Home, MagicHue, and LEDENET controllers.</p>
+            <p>Available on the <a href="https://apps.apple.com/app/lucis">Mac App Store</a>.</p>
+        </div>
 
-        <p>Disponible en la <a href="https://apps.apple.com/app/lucis">Mac App Store</a>.</p>
+        <div lang="es">
+            <h2>Funcionalidades</h2>
+            <p>Encender, apagar y ajustar el brillo de tus luces LED WiFi con un clic. Colores, efectos, escenas guardadas, horarios programados y activadores del sistema. Atajo de teclado global y compatibilidad con Siri. Compatible con Magic Home, MagicHue y controladores LEDENET.</p>
+            <p>Disponible en la <a href="https://apps.apple.com/app/lucis">Mac App Store</a>.</p>
+        </div>
 
         <div class="footer">
             &copy; 2026 Manuel L&oacute;pez Arag&oacute;n
         </div>
     </div>
+
+    <script>
+    function setLang(lang) {
+        document.body.className = lang === 'es' ? 'es' : '';
+        document.getElementById('btn-en').className = 'lang-btn' + (lang === 'en' ? ' active' : '');
+        document.getElementById('btn-es').className = 'lang-btn' + (lang === 'es' ? ' active' : '');
+        localStorage.setItem('lucis-lang', lang);
+    }
+    (function() {
+        var saved = localStorage.getItem('lucis-lang');
+        if (saved === 'es') setLang('es');
+    })();
+    </script>
 </body>
 </html>
