@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lucis - Support</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Helvetica Neue', sans-serif;
+            background: #0a0a0a; color: #e5e5e5;
+            line-height: 1.6; -webkit-font-smoothing: antialiased;
+        }
+        .container { max-width: 640px; margin: 0 auto; padding: 80px 24px; }
+        h1 { font-size: 28px; font-weight: 600; margin-bottom: 8px; color: #fff; }
+        h2 { font-size: 18px; font-weight: 600; margin-top: 36px; margin-bottom: 12px; color: #fff; }
+        p { margin-bottom: 16px; color: #a1a1a1; font-size: 15px; }
+        a { color: #e5e5e5; text-decoration: underline; text-underline-offset: 2px; }
+        .subtitle { font-size: 15px; color: #666; margin-bottom: 40px; }
+        .footer { margin-top: 48px; font-size: 13px; color: #444; }
+        .faq { margin-bottom: 24px; }
+        .faq p:first-child { color: #e5e5e5; font-weight: 500; margin-bottom: 4px; }
+        code { background: #1a1a1a; padding: 2px 6px; border-radius: 4px; font-size: 13px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Support</h1>
+        <p class="subtitle">Lucis - LED Control</p>
+
+        <h2>Frequently asked questions</h2>
+
+        <div class="faq">
+            <p>My devices are not found during scan</p>
+            <p>Make sure your Mac and your LED controller are connected to the same WiFi network. Lucis uses UDP broadcast on port 48899 to discover devices. Some routers block broadcast between WiFi bands (2.4 GHz vs 5 GHz). Try connecting both to the same band, or add the device manually by IP address.</p>
+        </div>
+
+        <div class="faq">
+            <p>The app stopped controlling my lights after a router restart</p>
+            <p>Your LED controller may have received a new IP address from your router (DHCP). Lucis automatically re-discovers devices every 5 minutes, but you can also go to Preferences &gt; Devices and scan again.</p>
+        </div>
+
+        <div class="faq">
+            <p>Which LED controllers are compatible?</p>
+            <p>Lucis works with any WiFi LED controller that uses the Magic Home / LEDENET protocol on TCP port 5577. This includes controllers sold under the brands Magic Home, MagicHue, Flux, and many generic WiFi RGB controllers available online.</p>
+        </div>
+
+        <div class="faq">
+            <p>Does Lucis need an internet connection?</p>
+            <p>No. All communication happens locally between your Mac and your LED controllers over your WiFi network. No cloud, no accounts, no internet required.</p>
+        </div>
+
+        <div class="faq">
+            <p>Can I control lights from multiple Macs?</p>
+            <p>Yes. Each Mac running Lucis communicates directly with the LED controllers. Multiple Macs can control the same devices simultaneously.</p>
+        </div>
+
+        <h2>Contact</h2>
+        <p>For questions, bug reports, or feature requests:<br>
+        <a href="mailto:mlopezrivero@gmail.com">mlopezrivero@gmail.com</a></p>
+
+        <h2>System requirements</h2>
+        <p>macOS 14.0 (Sonoma) or later. Apple Silicon or Intel Mac.</p>
+
+        <div class="footer">
+            <a href="index.html">Back to Lucis</a> &middot; <a href="privacy.html">Privacy Policy</a> &middot; &copy; 2026 Manuel Lopez Rivero
+        </div>
+    </div>
+</body>
+</html>
