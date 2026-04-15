@@ -3,7 +3,62 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lucis - WiFi LED Controller</title>
+
+    <!-- SEO: Title y Description -->
+    <title>Lucis - Control WiFi LED Strips from Your Mac Menu Bar</title>
+    <meta name="description" content="Lucis is a native macOS menu bar app to control Magic Home, MagicHue and LEDENET WiFi LED strips. Colors, effects, scenes, schedules and Siri support. No cloud, no account needed.">
+    <meta name="keywords" content="magic home mac,led strip mac,wifi led controller macos,magic home macos,control led mac,led strip desktop app,MagicHue mac,LEDENET mac,smart led mac app">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://mlopezaragon.github.io/lucis-site/">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Lucis - WiFi LED Controller for Mac">
+    <meta property="og:description" content="Control Magic Home LED strips from the macOS menu bar. Colors, effects, scenes, schedules and Siri shortcuts. Native, private, no cloud.">
+    <meta property="og:image" content="https://mlopezaragon.github.io/lucis-site/logo.png">
+    <meta property="og:url" content="https://mlopezaragon.github.io/lucis-site/">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Lucis">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Lucis - WiFi LED Controller for Mac">
+    <meta name="twitter:description" content="Control Magic Home LED strips from the macOS menu bar. Colors, effects, scenes, schedules and Siri shortcuts.">
+    <meta name="twitter:image" content="https://mlopezaragon.github.io/lucis-site/logo.png">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="logo.png">
+    <link rel="apple-touch-icon" href="logo.png">
+
+    <!-- Alternate language -->
+    <link rel="alternate" hreflang="en" href="https://mlopezaragon.github.io/lucis-site/">
+    <link rel="alternate" hreflang="es" href="https://mlopezaragon.github.io/lucis-site/">
+
+    <!-- Schema.org Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "Lucis",
+        "operatingSystem": "macOS 14.0+",
+        "applicationCategory": "UtilitiesApplication",
+        "description": "Native macOS menu bar app to control Magic Home, MagicHue and LEDENET WiFi LED strips. Colors, effects, scenes, schedules and Siri support.",
+        "url": "https://mlopezaragon.github.io/lucis-site/",
+        "downloadUrl": "https://apps.apple.com/app/lucis/id6762290325",
+        "softwareVersion": "1.0",
+        "author": {
+            "@type": "Organization",
+            "name": "UTILIA SERVICIOS IA S.COOP.CAN"
+        },
+        "offers": {
+            "@type": "Offer",
+            "price": "1.99",
+            "priceCurrency": "USD",
+            "availability": "https://schema.org/InStock"
+        },
+        "image": "https://mlopezaragon.github.io/lucis-site/logo.png"
+    }
+    </script>
+
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
@@ -14,14 +69,18 @@
         .container { max-width: 640px; margin: 0 auto; padding: 80px 24px; }
         h1 { font-size: 28px; font-weight: 600; margin-bottom: 8px; color: #fff; }
         h2 { font-size: 18px; font-weight: 600; margin-top: 48px; margin-bottom: 12px; color: #fff; }
+        h3 { font-size: 15px; font-weight: 600; margin-top: 32px; margin-bottom: 8px; color: #fff; }
         p { margin-bottom: 16px; color: #a1a1a1; font-size: 15px; }
         a { color: #e5e5e5; text-decoration: underline; text-underline-offset: 2px; }
-        .subtitle { font-size: 15px; color: #666; margin-bottom: 40px; }
-        .nav { margin-top: 32px; display: flex; gap: 24px; }
+        a:hover { color: #fff; }
+        .subtitle { font-size: 17px; color: #888; margin-bottom: 32px; line-height: 1.5; }
+        .nav { margin-top: 24px; display: flex; gap: 24px; flex-wrap: wrap; }
         .nav a { font-size: 14px; color: #666; text-decoration: none; }
         .nav a:hover { color: #e5e5e5; }
         .divider { height: 1px; background: #222; margin: 48px 0; }
         .footer { margin-top: 48px; font-size: 13px; color: #444; }
+        .footer a { color: #555; }
+        .footer a:hover { color: #888; }
         .lang-toggle { display: flex; gap: 8px; margin-bottom: 40px; }
         .lang-btn {
             font-size: 13px; font-weight: 500; padding: 4px 12px;
@@ -34,11 +93,82 @@
         [lang="es"] { display: none; }
         body.es [lang="es"] { display: block; }
         body.es [lang="en"] { display: none; }
+
+        /* App Store badge */
+        .app-store-badge {
+            display: inline-block;
+            margin-top: 8px;
+            margin-bottom: 32px;
+            transition: opacity 0.2s ease;
+        }
+        .app-store-badge:hover { opacity: 0.8; }
+        .app-store-badge svg { display: block; }
+
+        /* Features grid */
+        .features-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-top: 16px;
+        }
+        @media (max-width: 480px) {
+            .features-grid { grid-template-columns: 1fr; }
+        }
+        .feature-item {
+            padding: 16px;
+            border-radius: 10px;
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(255,255,255,0.06);
+        }
+        .feature-icon {
+            font-size: 20px;
+            margin-bottom: 8px;
+            display: block;
+            color: #888;
+        }
+        .feature-item h3 {
+            font-size: 14px;
+            font-weight: 600;
+            margin: 0 0 6px 0;
+            color: #e5e5e5;
+        }
+        .feature-item p {
+            font-size: 13px;
+            margin: 0;
+            color: #777;
+            line-height: 1.5;
+        }
+
+        /* Compatibility */
+        .compat-list {
+            list-style: none;
+            padding: 0;
+            margin: 8px 0 0;
+        }
+        .compat-list li {
+            font-size: 14px;
+            color: #a1a1a1;
+            padding: 6px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.04);
+        }
+        .compat-list li:last-child { border-bottom: none; }
+        .compat-list li strong { color: #ccc; font-weight: 500; }
+
+        /* Requirements */
+        .req-box {
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(255,255,255,0.06);
+            border-radius: 10px;
+            padding: 16px;
+            margin-top: 12px;
+        }
+        .req-box p { font-size: 13px; margin-bottom: 6px; }
+        .req-box p:last-child { margin-bottom: 0; }
     </style>
 </head>
 <body>
     <div class="container">
-        <img src="logo.png" alt="Lucis" width="64" height="64" style="border-radius: 14px; margin-bottom: 20px;">
+        <img src="logo.png" alt="Lucis app icon" width="80" height="80" style="border-radius: 18px; margin-bottom: 20px;">
         <h1>Lucis</h1>
 
         <div class="lang-toggle">
@@ -46,32 +176,229 @@
             <button class="lang-btn" id="btn-es" onclick="setLang('es')">Espa&ntilde;ol</button>
         </div>
 
-        <p class="subtitle" lang="en">WiFi LED strip control from the macOS menu bar.</p>
-        <p class="subtitle" lang="es">Control de tiras LED WiFi desde la barra de men&uacute; de macOS.</p>
+        <!-- EN subtitle -->
+        <p class="subtitle" lang="en">Control your WiFi LED strips from the macOS menu bar. No phone needed, no cloud, no account. Just your Mac and your lights.</p>
+        <!-- ES subtitle -->
+        <p class="subtitle" lang="es">Controla tus tiras LED WiFi desde la barra de men&uacute; de macOS. Sin m&oacute;vil, sin nube, sin cuentas. Solo tu Mac y tus luces.</p>
+
+        <!-- EN App Store badge -->
+        <div lang="en">
+            <a href="https://apps.apple.com/app/lucis/id6762290325" class="app-store-badge" aria-label="Download Lucis on the Mac App Store">
+                <svg xmlns="http://www.w3.org/2000/svg" width="156" height="40" viewBox="0 0 156 40">
+                    <rect width="156" height="40" rx="7" fill="#fff"/>
+                    <text x="53" y="15" font-family="-apple-system, BlinkMacSystemFont, 'Helvetica Neue', sans-serif" font-size="8" fill="#000" font-weight="400">Download on the</text>
+                    <text x="53" y="28" font-family="-apple-system, BlinkMacSystemFont, 'Helvetica Neue', sans-serif" font-size="14" fill="#000" font-weight="600">Mac App Store</text>
+                    <g transform="translate(14,6) scale(0.055)">
+                        <path fill="#000" d="M248.644,123.476c-5.45-29.71,8.598-60.285,25.516-80.89 c18.645-22.735,50.642-40.17,77.986-42.086c4.619,31.149-8.093,61.498-24.826,83.025 C308.986,106.315,278.261,126.597,248.644,123.476z M389.844,407.96c-12.17,26.563-18.094,38.4-33.834,61.97 c-21.994,32.919-53.011,73.898-91.448,74.18c-34.151,0.311-42.923-22.239-89.28-22.015 c-46.344,0.225-56.053,22.563-90.217,22.252c-38.437-0.311-67.691-37.313-89.685-70.232 C-46.282,409.54-72.006,288.573-28.79,206.83c30.354-57.482,82.291-93.077,130.078-93.389 c37.061-0.462,72.063,24.978,94.768,24.978c22.692,0,65.272-30.91,109.99-26.375 c18.721,0.787,71.273,7.563,105.035,56.98C373.373,192.381,337.404,269.53,389.844,407.96z"/>
+                    </g>
+                </svg>
+            </a>
+        </div>
+        <!-- ES App Store badge -->
+        <div lang="es">
+            <a href="https://apps.apple.com/app/lucis/id6762290325" class="app-store-badge" aria-label="Descargar Lucis en la Mac App Store">
+                <svg xmlns="http://www.w3.org/2000/svg" width="165" height="40" viewBox="0 0 165 40">
+                    <rect width="165" height="40" rx="7" fill="#fff"/>
+                    <text x="53" y="15" font-family="-apple-system, BlinkMacSystemFont, 'Helvetica Neue', sans-serif" font-size="8" fill="#000" font-weight="400">Cons&iacute;guelo en la</text>
+                    <text x="53" y="28" font-family="-apple-system, BlinkMacSystemFont, 'Helvetica Neue', sans-serif" font-size="14" fill="#000" font-weight="600">Mac App Store</text>
+                    <g transform="translate(14,6) scale(0.055)">
+                        <path fill="#000" d="M248.644,123.476c-5.45-29.71,8.598-60.285,25.516-80.89 c18.645-22.735,50.642-40.17,77.986-42.086c4.619,31.149-8.093,61.498-24.826,83.025 C308.986,106.315,278.261,126.597,248.644,123.476z M389.844,407.96c-12.17,26.563-18.094,38.4-33.834,61.97 c-21.994,32.919-53.011,73.898-91.448,74.18c-34.151,0.311-42.923-22.239-89.28-22.015 c-46.344,0.225-56.053,22.563-90.217,22.252c-38.437-0.311-67.691-37.313-89.685-70.232 C-46.282,409.54-72.006,288.573-28.79,206.83c30.354-57.482,82.291-93.077,130.078-93.389 c37.061-0.462,72.063,24.978,94.768,24.978c22.692,0,65.272-30.91,109.99-26.375 c18.721,0.787,71.273,7.563,105.035,56.98C373.373,192.381,337.404,269.53,389.844,407.96z"/>
+                    </g>
+                </svg>
+            </a>
+        </div>
 
         <div class="nav">
             <a href="privacy.html" lang="en">Privacy</a>
             <a href="privacy.html" lang="es">Privacidad</a>
             <a href="support.html" lang="en">Support</a>
             <a href="support.html" lang="es">Soporte</a>
+            <a href="guide.html" lang="en">Setup Guide</a>
+            <a href="guia.html" lang="es">Gu&iacute;a de uso</a>
         </div>
 
         <div class="divider"></div>
 
+        <!-- ==================== ENGLISH CONTENT ==================== -->
         <div lang="en">
+            <h2>The missing Mac app for your LED strips</h2>
+            <p>Magic Home, MagicHue and LEDENET WiFi LED controllers only come with mobile apps. If you want to adjust your lights while working on your Mac, you have to reach for your phone every time. Lucis solves this by putting full LED control in the macOS menu bar, one click away at all times.</p>
+            <p>Lucis is a native macOS application built entirely with Apple frameworks. It communicates directly with your LED controllers over your local WiFi network using TCP commands. No internet, no cloud servers, no accounts. Your data never leaves your Mac.</p>
+
             <h2>Features</h2>
-            <p>Turn on, off, and adjust the brightness of your WiFi LED lights in one click. Colors, effects, saved scenes, scheduled timers, and system triggers. Global keyboard shortcut and Siri support. Compatible with Magic Home, MagicHue, and LEDENET controllers.</p>
-            <p>Available on the <a href="https://apps.apple.com/app/lucis">Mac App Store</a>.</p>
+            <div class="features-grid">
+                <div class="feature-item">
+                    <span class="feature-icon" aria-hidden="true">&#x1F4A1;</span>
+                    <h3>One-Click On/Off</h3>
+                    <p>Toggle your lights from the menu bar or with the global keyboard shortcut Cmd+Opt+L. Instant response, no delays.</p>
+                </div>
+                <div class="feature-item">
+                    <span class="feature-icon" aria-hidden="true">&#x1F308;</span>
+                    <h3>Colors &amp; Brightness</h3>
+                    <p>Choose from 10 preset colors, pick any hue from the color spectrum, or adjust the warm white channel for RGBWW strips. Fine-tune brightness from 2% to 100%.</p>
+                </div>
+                <div class="feature-item">
+                    <span class="feature-icon" aria-hidden="true">&#x2728;</span>
+                    <h3>Built-in Effects</h3>
+                    <p>Rainbow, gradient, strobe, breathing and color jump effects with adjustable speed. Activate effects directly from the popover.</p>
+                </div>
+                <div class="feature-item">
+                    <span class="feature-icon" aria-hidden="true">&#x1F3AC;</span>
+                    <h3>Saved Scenes</h3>
+                    <p>Create and name your own lighting scenes. Apply them with one click to instantly set the mood for work, movies, gaming or relaxation.</p>
+                </div>
+                <div class="feature-item">
+                    <span class="feature-icon" aria-hidden="true">&#x23F0;</span>
+                    <h3>Scheduled Timers</h3>
+                    <p>Set timers to turn your lights on or off at specific times. Configure which days of the week each schedule runs. Wake up with light.</p>
+                </div>
+                <div class="feature-item">
+                    <span class="feature-icon" aria-hidden="true">&#x26A1;</span>
+                    <h3>System Triggers</h3>
+                    <p>Automatically react to macOS events: turn lights off when your Mac sleeps, on when it wakes, dim when the display turns off, or apply a scene when you log in.</p>
+                </div>
+                <div class="feature-item">
+                    <span class="feature-icon" aria-hidden="true">&#x1F399;</span>
+                    <h3>Siri &amp; Shortcuts</h3>
+                    <p>Control your lights with your voice. Lucis integrates with Siri and the Shortcuts app so you can say "Turn on Lucis" or build custom automations.</p>
+                </div>
+                <div class="feature-item">
+                    <span class="feature-icon" aria-hidden="true">&#x1F50D;</span>
+                    <h3>Auto-Discovery</h3>
+                    <p>Lucis scans your local network to find LED controllers automatically. It also tracks IP changes when your router assigns a new address via DHCP.</p>
+                </div>
+            </div>
+
+            <h2>Multiple Devices</h2>
+            <p>Control several LED strips from one place. Lucis supports multiple devices simultaneously. Switch between them with the picker in the popover, or apply scenes and triggers that target all your lights at once.</p>
+
+            <h2>Compatibility</h2>
+            <p>Lucis works with any WiFi LED controller that uses the Magic Home / LEDENET protocol (TCP port 5577). This includes controllers sold under these brands:</p>
+            <ul class="compat-list">
+                <li><strong>Magic Home</strong> &mdash; the most popular WiFi LED controller ecosystem worldwide</li>
+                <li><strong>MagicHue</strong> &mdash; RGB and RGBWW WiFi controllers</li>
+                <li><strong>LEDENET</strong> &mdash; generic WiFi LED controllers with the same protocol</li>
+                <li><strong>Flux</strong> and other generic RGB WiFi controllers on TCP 5577</li>
+            </ul>
+
+            <h2>Privacy by Design</h2>
+            <p>Lucis contains zero analytics, zero tracking, and zero third-party code. All communication stays on your local WiFi network. Your light settings are stored only on your Mac. Read the full <a href="privacy.html">privacy policy</a>.</p>
+
+            <h2>System Requirements</h2>
+            <div class="req-box">
+                <p><strong>macOS:</strong> 14.0 (Sonoma) or later</p>
+                <p><strong>Processor:</strong> Apple Silicon or Intel</p>
+                <p><strong>Network:</strong> WiFi &mdash; Mac and LED controllers on the same local network</p>
+                <p><strong>Internet:</strong> Not required. Lucis works entirely offline.</p>
+            </div>
+
+            <div class="divider"></div>
+
+            <p style="text-align:center; margin-top: 24px;">
+                <a href="https://apps.apple.com/app/lucis/id6762290325" class="app-store-badge" aria-label="Download Lucis on the Mac App Store">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="156" height="40" viewBox="0 0 156 40">
+                        <rect width="156" height="40" rx="7" fill="#fff"/>
+                        <text x="53" y="15" font-family="-apple-system, BlinkMacSystemFont, 'Helvetica Neue', sans-serif" font-size="8" fill="#000" font-weight="400">Download on the</text>
+                        <text x="53" y="28" font-family="-apple-system, BlinkMacSystemFont, 'Helvetica Neue', sans-serif" font-size="14" fill="#000" font-weight="600">Mac App Store</text>
+                        <g transform="translate(14,6) scale(0.055)">
+                            <path fill="#000" d="M248.644,123.476c-5.45-29.71,8.598-60.285,25.516-80.89 c18.645-22.735,50.642-40.17,77.986-42.086c4.619,31.149-8.093,61.498-24.826,83.025 C308.986,106.315,278.261,126.597,248.644,123.476z M389.844,407.96c-12.17,26.563-18.094,38.4-33.834,61.97 c-21.994,32.919-53.011,73.898-91.448,74.18c-34.151,0.311-42.923-22.239-89.28-22.015 c-46.344,0.225-56.053,22.563-90.217,22.252c-38.437-0.311-67.691-37.313-89.685-70.232 C-46.282,409.54-72.006,288.573-28.79,206.83c30.354-57.482,82.291-93.077,130.078-93.389 c37.061-0.462,72.063,24.978,94.768,24.978c22.692,0,65.272-30.91,109.99-26.375 c18.721,0.787,71.273,7.563,105.035,56.98C373.373,192.381,337.404,269.53,389.844,407.96z"/>
+                        </g>
+                    </svg>
+                </a>
+            </p>
         </div>
 
+        <!-- ==================== SPANISH CONTENT ==================== -->
         <div lang="es">
+            <h2>La app de Mac que le faltaba a tus tiras LED</h2>
+            <p>Los controladores WiFi LED de Magic Home, MagicHue y LEDENET solo traen apps para m&oacute;vil. Si quieres ajustar tus luces mientras trabajas en el Mac, tienes que coger el m&oacute;vil cada vez. Lucis resuelve esto poniendo el control total de tus LED en la barra de men&uacute; de macOS, siempre a un clic de distancia.</p>
+            <p>Lucis es una aplicaci&oacute;n nativa de macOS construida &iacute;ntegramente con frameworks de Apple. Se comunica directamente con tus controladores LED a trav&eacute;s de tu red WiFi local mediante comandos TCP. Sin internet, sin servidores en la nube, sin cuentas. Tus datos nunca salen de tu Mac.</p>
+
             <h2>Funcionalidades</h2>
-            <p>Encender, apagar y ajustar el brillo de tus luces LED WiFi con un clic. Colores, efectos, escenas guardadas, horarios programados y activadores del sistema. Atajo de teclado global y compatibilidad con Siri. Compatible con Magic Home, MagicHue y controladores LEDENET.</p>
-            <p>Disponible en la <a href="https://apps.apple.com/app/lucis">Mac App Store</a>.</p>
+            <div class="features-grid">
+                <div class="feature-item">
+                    <span class="feature-icon" aria-hidden="true">&#x1F4A1;</span>
+                    <h3>Encender y apagar con un clic</h3>
+                    <p>Enciende o apaga tus luces desde la barra de men&uacute; o con el atajo de teclado global Cmd+Opt+L. Respuesta instant&aacute;nea, sin retrasos.</p>
+                </div>
+                <div class="feature-item">
+                    <span class="feature-icon" aria-hidden="true">&#x1F308;</span>
+                    <h3>Colores y brillo</h3>
+                    <p>Elige entre 10 colores predefinidos, selecciona cualquier tono del espectro crom&aacute;tico o ajusta el canal de blanco c&aacute;lido para tiras RGBWW. Brillo ajustable del 2% al 100%.</p>
+                </div>
+                <div class="feature-item">
+                    <span class="feature-icon" aria-hidden="true">&#x2728;</span>
+                    <h3>Efectos integrados</h3>
+                    <p>Arco&iacute;ris, degradado, estrobo, respiraci&oacute;n y salto de colores con velocidad ajustable. Activa los efectos directamente desde el popover.</p>
+                </div>
+                <div class="feature-item">
+                    <span class="feature-icon" aria-hidden="true">&#x1F3AC;</span>
+                    <h3>Escenas guardadas</h3>
+                    <p>Crea y nombra tus propias escenas de iluminaci&oacute;n. Apl&iacute;calas con un clic para establecer al instante el ambiente para trabajar, ver pel&iacute;culas, jugar o descansar.</p>
+                </div>
+                <div class="feature-item">
+                    <span class="feature-icon" aria-hidden="true">&#x23F0;</span>
+                    <h3>Horarios programados</h3>
+                    <p>Programa horarios para encender o apagar tus luces a horas concretas. Configura qu&eacute; d&iacute;as de la semana se activa cada horario. Despierta con luz.</p>
+                </div>
+                <div class="feature-item">
+                    <span class="feature-icon" aria-hidden="true">&#x26A1;</span>
+                    <h3>Activadores del sistema</h3>
+                    <p>Reacciona autom&aacute;ticamente a eventos de macOS: apaga las luces cuando el Mac entra en reposo, enci&eacute;ndelas al despertar, baja la intensidad al apagar la pantalla o aplica una escena al iniciar sesi&oacute;n.</p>
+                </div>
+                <div class="feature-item">
+                    <span class="feature-icon" aria-hidden="true">&#x1F399;</span>
+                    <h3>Siri y Atajos</h3>
+                    <p>Controla tus luces con la voz. Lucis se integra con Siri y la app Atajos para que puedas decir &laquo;Enciende Lucis&raquo; o crear automatizaciones personalizadas.</p>
+                </div>
+                <div class="feature-item">
+                    <span class="feature-icon" aria-hidden="true">&#x1F50D;</span>
+                    <h3>Descubrimiento autom&aacute;tico</h3>
+                    <p>Lucis escanea tu red local para encontrar controladores LED autom&aacute;ticamente. Tambi&eacute;n detecta cambios de IP cuando el router asigna una nueva direcci&oacute;n por DHCP.</p>
+                </div>
+            </div>
+
+            <h2>M&uacute;ltiples dispositivos</h2>
+            <p>Controla varias tiras LED desde un solo lugar. Lucis soporta m&uacute;ltiples dispositivos simult&aacute;neamente. Cambia entre ellos con el selector del popover, o aplica escenas y activadores que act&uacute;en sobre todas tus luces a la vez.</p>
+
+            <h2>Compatibilidad</h2>
+            <p>Lucis funciona con cualquier controlador WiFi LED que use el protocolo Magic Home / LEDENET (puerto TCP 5577). Esto incluye controladores vendidos bajo estas marcas:</p>
+            <ul class="compat-list">
+                <li><strong>Magic Home</strong> &mdash; el ecosistema de controladores WiFi LED m&aacute;s popular del mundo</li>
+                <li><strong>MagicHue</strong> &mdash; controladores WiFi RGB y RGBWW</li>
+                <li><strong>LEDENET</strong> &mdash; controladores WiFi LED gen&eacute;ricos con el mismo protocolo</li>
+                <li><strong>Flux</strong> y otros controladores RGB WiFi gen&eacute;ricos en TCP 5577</li>
+            </ul>
+
+            <h2>Privacidad por dise&ntilde;o</h2>
+            <p>Lucis no contiene anal&iacute;tica, ni rastreo, ni c&oacute;digo de terceros. Toda la comunicaci&oacute;n permanece en tu red WiFi local. La configuraci&oacute;n de tus luces se almacena &uacute;nicamente en tu Mac. Lee la <a href="privacy.html">pol&iacute;tica de privacidad</a> completa.</p>
+
+            <h2>Requisitos del sistema</h2>
+            <div class="req-box">
+                <p><strong>macOS:</strong> 14.0 (Sonoma) o posterior</p>
+                <p><strong>Procesador:</strong> Apple Silicon o Intel</p>
+                <p><strong>Red:</strong> WiFi &mdash; Mac y controladores LED en la misma red local</p>
+                <p><strong>Internet:</strong> No necesario. Lucis funciona completamente sin conexi&oacute;n.</p>
+            </div>
+
+            <div class="divider"></div>
+
+            <p style="text-align:center; margin-top: 24px;">
+                <a href="https://apps.apple.com/app/lucis/id6762290325" class="app-store-badge" aria-label="Descargar Lucis en la Mac App Store">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="165" height="40" viewBox="0 0 165 40">
+                        <rect width="165" height="40" rx="7" fill="#fff"/>
+                        <text x="53" y="15" font-family="-apple-system, BlinkMacSystemFont, 'Helvetica Neue', sans-serif" font-size="8" fill="#000" font-weight="400">Cons&iacute;guelo en la</text>
+                        <text x="53" y="28" font-family="-apple-system, BlinkMacSystemFont, 'Helvetica Neue', sans-serif" font-size="14" fill="#000" font-weight="600">Mac App Store</text>
+                        <g transform="translate(14,6) scale(0.055)">
+                            <path fill="#000" d="M248.644,123.476c-5.45-29.71,8.598-60.285,25.516-80.89 c18.645-22.735,50.642-40.17,77.986-42.086c4.619,31.149-8.093,61.498-24.826,83.025 C308.986,106.315,278.261,126.597,248.644,123.476z M389.844,407.96c-12.17,26.563-18.094,38.4-33.834,61.97 c-21.994,32.919-53.011,73.898-91.448,74.18c-34.151,0.311-42.923-22.239-89.28-22.015 c-46.344,0.225-56.053,22.563-90.217,22.252c-38.437-0.311-67.691-37.313-89.685-70.232 C-46.282,409.54-72.006,288.573-28.79,206.83c30.354-57.482,82.291-93.077,130.078-93.389 c37.061-0.462,72.063,24.978,94.768,24.978c22.692,0,65.272-30.91,109.99-26.375 c18.721,0.787,71.273,7.563,105.035,56.98C373.373,192.381,337.404,269.53,389.844,407.96z"/>
+                        </g>
+                    </svg>
+                </a>
+            </p>
         </div>
 
         <div class="footer">
-            &copy; 2026 UTILIA SERVICIOS IA S.COOP.CAN
+            &copy; 2026 UTILIA SERVICIOS IA S.COOP.CAN &middot; <a href="mailto:soporte@utilia.ai">soporte@utilia.ai</a>
         </div>
     </div>
 
@@ -81,6 +408,16 @@
         document.getElementById('btn-en').className = 'lang-btn' + (lang === 'en' ? ' active' : '');
         document.getElementById('btn-es').className = 'lang-btn' + (lang === 'es' ? ' active' : '');
         localStorage.setItem('lucis-lang', lang);
+        // Update meta tags for the selected language
+        if (lang === 'es') {
+            document.documentElement.lang = 'es';
+            document.querySelector('meta[name="description"]').content = 'Lucis es una app nativa de macOS para controlar tiras LED WiFi Magic Home, MagicHue y LEDENET desde la barra de men\u00fa. Colores, efectos, escenas, horarios y Siri. Sin nube, sin cuentas.';
+            document.title = 'Lucis - Controla tiras LED WiFi desde la barra de men\u00fa del Mac';
+        } else {
+            document.documentElement.lang = 'en';
+            document.querySelector('meta[name="description"]').content = 'Lucis is a native macOS menu bar app to control Magic Home, MagicHue and LEDENET WiFi LED strips. Colors, effects, scenes, schedules and Siri support. No cloud, no account needed.';
+            document.title = 'Lucis - Control WiFi LED Strips from Your Mac Menu Bar';
+        }
     }
     (function() {
         var saved = localStorage.getItem('lucis-lang');
