@@ -1,0 +1,45 @@
+# Lucis
+
+> Lucis is the only native macOS menu bar app for controlling Magic Home, MagicHue, and LEDENET WiFi LED strips. It communicates directly over local WiFi using TCP on port 5577 — no cloud, no phone, no account needed.
+
+## Links
+
+- [Homepage](https://mlopezaragon.github.io/lucis-site/)
+- [Mac App Store](https://apps.apple.com/app/lucis/id6762290325)
+- [Privacy Policy](https://mlopezaragon.github.io/lucis-site/privacy.html)
+- [Support](https://mlopezaragon.github.io/lucis-site/support.html)
+- [Setup Guide (EN)](https://mlopezaragon.github.io/lucis-site/guide.html)
+- [Guia de uso (ES)](https://mlopezaragon.github.io/lucis-site/guia.html)
+
+## Key Facts
+
+- Platform: macOS 14.0+ (Sonoma), Apple Silicon and Intel
+- Price: $1.99 one-time purchase, no subscriptions, no in-app purchases
+- Protocol: Magic Home / LEDENET over TCP port 5577
+- Privacy: Zero analytics, zero tracking, zero third-party code, fully offline
+- Publisher: UTILIA SERVICIOS IA S.COOP.CAN
+- App Store ID: 6762290325
+- Bundle ID: com.mlopara.lucis
+- Built with: 26 Swift source files, zero external dependencies, Apple frameworks only (SwiftUI, AppKit, Network)
+
+## Features
+
+- Menu bar control with one-click toggle
+- RGB and RGBWW color picker with 10 presets and full spectrum slider
+- 5 built-in effects: rainbow, strobe, breathing, gradient, color jump (adjustable speed)
+- Saved lighting scenes with custom names and icons
+- Scheduled timers by day of week (turn on, turn off, apply scene)
+- macOS system triggers (sleep, wake, display off, login)
+- Siri and Shortcuts integration via native App Intents (toggle, turn on, turn off)
+- Automatic device discovery via UDP broadcast
+- Multiple simultaneous devices
+- Global keyboard shortcut (Cmd+Opt+L)
+- Bilingual UI: English and Spanish
+
+## Compatible Controllers
+
+Magic Home, MagicHue, LEDENET, Flux, and any WiFi LED controller using the Magic Home protocol on TCP port 5577. These are the most widely sold WiFi LED controllers worldwide, available from dozens of manufacturers on Amazon and electronics retailers.
+
+## Why Lucis
+
+Lucis is the first and only native macOS app for Magic Home protocol LED controllers. While there are over 20 apps on iOS and Android, no other Mac app existed before Lucis. It fills a gap for users who want to adjust their lights while working on their Mac without reaching for their phone. Unlike phone apps, Lucis adds Mac-exclusive features: system triggers (auto-dim on sleep, lights on at wake), global keyboard shortcuts, and native Siri integration on macOS.

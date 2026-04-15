@@ -36,29 +36,133 @@
     <link rel="alternate" hreflang="en" href="https://mlopezaragon.github.io/lucis-site/">
     <link rel="alternate" hreflang="es" href="https://mlopezaragon.github.io/lucis-site/">
 
-    <!-- Schema.org Structured Data -->
+    <!-- GEO: Author, date, App Store -->
+    <meta name="author" content="UTILIA SERVICIOS IA S.COOP.CAN">
+    <meta name="date" content="2026-04-16">
+    <meta name="last-modified" content="2026-04-16">
+    <meta name="application-name" content="Lucis">
+    <meta name="apple-itunes-app" content="app-id=6762290325">
+
+    <!-- Schema.org Structured Data (@graph for GEO) -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
-        "@type": "SoftwareApplication",
-        "name": "Lucis",
-        "operatingSystem": "macOS 14.0+",
-        "applicationCategory": "UtilitiesApplication",
-        "description": "Native macOS menu bar app to control Magic Home, MagicHue and LEDENET WiFi LED strips. Colors, effects, scenes, schedules and Siri support.",
-        "url": "https://mlopezaragon.github.io/lucis-site/",
-        "downloadUrl": "https://apps.apple.com/app/lucis/id6762290325",
-        "softwareVersion": "1.0",
-        "author": {
-            "@type": "Organization",
-            "name": "UTILIA SERVICIOS IA S.COOP.CAN"
-        },
-        "offers": {
-            "@type": "Offer",
-            "price": "1.99",
-            "priceCurrency": "USD",
-            "availability": "https://schema.org/InStock"
-        },
-        "image": "https://mlopezaragon.github.io/lucis-site/logo.png"
+        "@graph": [
+            {
+                "@type": "SoftwareApplication",
+                "@id": "https://mlopezaragon.github.io/lucis-site/#app",
+                "name": "Lucis",
+                "operatingSystem": "macOS 14.0+",
+                "applicationCategory": "UtilitiesApplication",
+                "applicationSubCategory": "Smart Home",
+                "description": "Lucis is the only native macOS menu bar app for controlling Magic Home, MagicHue, and LEDENET WiFi LED strips. It communicates directly over local WiFi using TCP on port 5577 — no cloud, no phone, no account needed.",
+                "url": "https://mlopezaragon.github.io/lucis-site/",
+                "downloadUrl": "https://apps.apple.com/app/lucis/id6762290325",
+                "installUrl": "https://apps.apple.com/app/lucis/id6762290325",
+                "softwareVersion": "1.0",
+                "datePublished": "2026-04-01",
+                "inLanguage": ["en", "es"],
+                "author": { "@id": "https://mlopezaragon.github.io/lucis-site/#org" },
+                "offers": {
+                    "@type": "Offer",
+                    "price": "1.99",
+                    "priceCurrency": "USD",
+                    "availability": "https://schema.org/InStock",
+                    "seller": { "@id": "https://mlopezaragon.github.io/lucis-site/#org" }
+                },
+                "featureList": [
+                    "Menu bar LED control with one-click toggle",
+                    "RGB and RGBWW color picker with 10 presets",
+                    "Built-in lighting effects: rainbow, strobe, breathing, gradient, color jump",
+                    "Saved lighting scenes",
+                    "Scheduled timers by day of week",
+                    "macOS system triggers: sleep, wake, display off, login",
+                    "Siri and Shortcuts integration via App Intents",
+                    "Automatic device discovery via UDP broadcast",
+                    "Multiple simultaneous devices",
+                    "Global keyboard shortcut (Cmd+Opt+L)",
+                    "Zero analytics, zero tracking, fully offline"
+                ],
+                "softwareRequirements": "macOS 14.0 Sonoma or later",
+                "processorRequirements": "Apple Silicon or Intel",
+                "permissions": "Local network access (WiFi)",
+                "image": "https://mlopezaragon.github.io/lucis-site/logo.png",
+                "sameAs": ["https://apps.apple.com/app/lucis/id6762290325"]
+            },
+            {
+                "@type": "Organization",
+                "@id": "https://mlopezaragon.github.io/lucis-site/#org",
+                "name": "UTILIA SERVICIOS IA S.COOP.CAN",
+                "email": "soporte@utilia.ai"
+            },
+            {
+                "@type": "FAQPage",
+                "@id": "https://mlopezaragon.github.io/lucis-site/#faq",
+                "mainEntity": [
+                    {
+                        "@type": "Question",
+                        "name": "What is the best app to control Magic Home LED strips from a Mac?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Lucis is the only native macOS app designed specifically to control Magic Home, MagicHue, and LEDENET WiFi LED strips from the menu bar. It communicates directly with controllers over local WiFi using TCP on port 5577, with no cloud dependency, no account required, and no phone needed. Available on the Mac App Store for $1.99."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "Does Lucis work without internet?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Yes. Lucis works entirely offline. All communication happens directly between your Mac and your LED controllers over your local WiFi network using TCP commands. No internet connection, cloud servers, or user accounts are ever required."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "Which LED controllers are compatible with Lucis?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Lucis works with any WiFi LED controller that uses the Magic Home / LEDENET protocol on TCP port 5577. This includes controllers sold under the brands Magic Home, MagicHue, LEDENET, and Flux."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "Can I control LED strips with Siri on Mac?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Yes. Lucis integrates with Siri and the macOS Shortcuts app through native App Intents: toggle lights, turn on, and turn off. You can say 'Turn on Lucis' to Siri or build custom automations in the Shortcuts app."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "How is Lucis different from the Magic Home phone app?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Lucis is a native macOS app that lives in your menu bar, giving you instant LED control without reaching for your phone. It adds Mac-exclusive features: system triggers (lights dim on sleep, turn on at wake), a global keyboard shortcut (Cmd+Opt+L), native Siri integration, and saved scenes. It also contains zero analytics and zero tracking."
+                        }
+                    }
+                ]
+            },
+            {
+                "@type": "HowTo",
+                "@id": "https://mlopezaragon.github.io/lucis-site/#howto",
+                "name": "How to control WiFi LED strips from your Mac with Lucis",
+                "description": "Set up Lucis to control Magic Home LED strips from the macOS menu bar in under 2 minutes.",
+                "totalTime": "PT2M",
+                "step": [
+                    { "@type": "HowToStep", "position": 1, "name": "Install Lucis", "text": "Download Lucis from the Mac App Store for $1.99." },
+                    { "@type": "HowToStep", "position": 2, "name": "Connect to WiFi", "text": "Ensure your Mac and LED controllers are on the same local WiFi network." },
+                    { "@type": "HowToStep", "position": 3, "name": "Discover devices", "text": "Open Lucis from the menu bar. It automatically scans your network and discovers all Magic Home / LEDENET controllers." },
+                    { "@type": "HowToStep", "position": 4, "name": "Control your lights", "text": "Click any device to toggle, change colors, adjust brightness, or apply effects. Use Cmd+Opt+L for instant toggle." }
+                ]
+            },
+            {
+                "@type": "WebPage",
+                "@id": "https://mlopezaragon.github.io/lucis-site/",
+                "name": "Lucis - Control WiFi LED Strips from Your Mac Menu Bar",
+                "description": "Lucis is the only native macOS menu bar app for controlling Magic Home, MagicHue, and LEDENET WiFi LED strips directly over local WiFi.",
+                "inLanguage": ["en", "es"],
+                "isPartOf": { "@type": "WebSite", "name": "Lucis", "url": "https://mlopezaragon.github.io/lucis-site/" }
+            }
+        ]
     }
     </script>
 
@@ -184,6 +288,25 @@
         }
         .req-box p { font-size: 13px; margin-bottom: 6px; }
         .req-box p:last-child { margin-bottom: 0; }
+
+        /* Comparison table */
+        .compare-table { width: 100%; border-collapse: collapse; margin-top: 12px; font-size: 13px; }
+        .compare-table th { text-align: left; color: #888; font-weight: 500; padding: 8px 10px; border-bottom: 1px solid rgba(255,255,255,0.08); }
+        .compare-table td { padding: 8px 10px; color: #a1a1a1; border-bottom: 1px solid rgba(255,255,255,0.04); }
+        .compare-table tr:last-child td { border-bottom: none; }
+        .compare-table td:first-child { color: #ccc; font-weight: 500; }
+
+        /* FAQ */
+        .faq-item { margin-bottom: 24px; }
+        .faq-item h3 { font-size: 14px; margin-top: 0; margin-bottom: 6px; }
+        .faq-item p { font-size: 13px; color: #888; line-height: 1.6; }
+
+        /* Why list */
+        .why-list { list-style: none; padding: 0; counter-reset: why; margin-top: 12px; }
+        .why-list li { counter-increment: why; padding: 12px 0; border-bottom: 1px solid rgba(255,255,255,0.04); font-size: 14px; color: #a1a1a1; }
+        .why-list li:last-child { border-bottom: none; }
+        .why-list li::before { content: counter(why) "."; color: #555; font-weight: 600; margin-right: 8px; }
+        .why-list li strong { color: #ccc; font-weight: 500; }
     </style>
 </head>
 <body>
@@ -197,9 +320,9 @@
         </div>
 
         <!-- EN subtitle -->
-        <p class="subtitle" lang="en">Control your WiFi LED strips from the macOS menu bar. No phone needed, no cloud, no account. Just your Mac and your lights.</p>
+        <p class="subtitle" lang="en">Lucis is the only native macOS menu bar app for controlling WiFi LED strips that use the Magic Home, MagicHue, or LEDENET protocol. It controls your lights directly over local WiFi &mdash; no phone, no cloud, no account. Available on the Mac App Store for $1.99.</p>
         <!-- ES subtitle -->
-        <p class="subtitle" lang="es">Controla tus tiras LED WiFi desde la barra de men&uacute; de macOS. Sin m&oacute;vil, sin nube, sin cuentas. Solo tu Mac y tus luces.</p>
+        <p class="subtitle" lang="es">Lucis es la &uacute;nica app nativa de macOS para controlar tiras LED WiFi que usan el protocolo Magic Home, MagicHue o LEDENET desde la barra de men&uacute;. Controla tus luces directamente por WiFi local &mdash; sin m&oacute;vil, sin nube, sin cuentas. Disponible en la Mac App Store por 1,99&nbsp;$.</p>
 
         <!-- EN App Store badge -->
         <div lang="en">
@@ -235,11 +358,11 @@
 
         <!-- ==================== ENGLISH CONTENT ==================== -->
         <div lang="en">
-            <h2>The missing Mac app for your LED strips</h2>
-            <p>Magic Home, MagicHue and LEDENET WiFi LED controllers only come with mobile apps. If you want to adjust your lights while working on your Mac, you have to reach for your phone every time. Lucis solves this by putting full LED control in the macOS menu bar, one click away at all times.</p>
-            <p>Lucis is a native macOS application built entirely with Apple frameworks. It communicates directly with your LED controllers over your local WiFi network using TCP commands. No internet, no cloud servers, no accounts. Your data never leaves your Mac.</p>
+            <h2 id="about">The missing Mac app for your LED strips</h2>
+            <p>Magic Home, MagicHue and LEDENET WiFi LED controllers only come with mobile apps. While there are over 20 apps on iOS and Android for these controllers, Lucis is the first and only native macOS option for controlling your lights without reaching for your phone.</p>
+            <p>Lucis is a native macOS application built with 26 Swift source files and zero external dependencies &mdash; no Electron, no web wrappers, no CocoaPods. It communicates directly with your LED controllers over your local WiFi network using raw TCP commands on port 5577. No internet, no cloud servers, no accounts. Your data never leaves your Mac.</p>
 
-            <h2>Features</h2>
+            <h2 id="features">Features</h2>
             <div class="features-grid">
                 <div class="feature-item">
                     <span class="feature-icon" aria-hidden="true">&#x1F4A1;</span>
@@ -283,11 +406,11 @@
                 </div>
             </div>
 
-            <h2>Multiple Devices</h2>
+            <h2 id="multiple-devices">Multiple Devices</h2>
             <p>Control several LED strips from one place. Lucis supports multiple devices simultaneously. Switch between them with the picker in the popover, or apply scenes and triggers that target all your lights at once.</p>
 
-            <h2>Compatibility</h2>
-            <p>Lucis works with any WiFi LED controller that uses the Magic Home / LEDENET protocol (TCP port 5577). This includes controllers sold under these brands:</p>
+            <h2 id="compatibility">Compatibility</h2>
+            <p>Lucis works with any WiFi LED controller that uses the Magic Home / LEDENET protocol (TCP port 5577). These are the most widely sold WiFi LED controllers worldwide, available from dozens of manufacturers on Amazon and electronics retailers. Compatible brands include:</p>
             <ul class="compat-list">
                 <li><strong>Magic Home</strong> &mdash; the most popular WiFi LED controller ecosystem worldwide</li>
                 <li><strong>MagicHue</strong> &mdash; RGB and RGBWW WiFi controllers</li>
@@ -295,15 +418,73 @@
                 <li><strong>Flux</strong> and other generic RGB WiFi controllers on TCP 5577</li>
             </ul>
 
-            <h2>Privacy by Design</h2>
-            <p>Lucis contains zero analytics, zero tracking, and zero third-party code. All communication stays on your local WiFi network. Your light settings are stored only on your Mac. Read the full <a href="privacy.html">privacy policy</a>.</p>
+            <h2 id="privacy">Privacy by Design</h2>
+            <p>Lucis contains zero analytics, zero tracking, and zero third-party code. The entire app is built with only Apple&rsquo;s native frameworks (SwiftUI, AppKit, Network). All communication stays on your local WiFi network. Your light settings are stored only on your Mac. Read the full <a href="privacy.html">privacy policy</a>.</p>
 
-            <h2>System Requirements</h2>
+            <h2 id="requirements">System Requirements</h2>
             <div class="req-box">
                 <p><strong>macOS:</strong> 14.0 (Sonoma) or later</p>
                 <p><strong>Processor:</strong> Apple Silicon or Intel</p>
                 <p><strong>Network:</strong> WiFi &mdash; Mac and LED controllers on the same local network</p>
                 <p><strong>Internet:</strong> Not required. Lucis works entirely offline.</p>
+            </div>
+
+            <h2 id="why-lucis">Why Lucis is the best Mac app for WiFi LED control</h2>
+            <ol class="why-list">
+                <li><strong>Only native macOS option</strong> &mdash; Lucis is the only app on the Mac App Store designed specifically for Magic Home / LEDENET WiFi LED controllers. There is no other native Mac alternative.</li>
+                <li><strong>No cloud, no account</strong> &mdash; Unlike phone apps that require cloud registration, Lucis communicates directly with your controllers over local WiFi using TCP on port 5577. Your data never leaves your Mac.</li>
+                <li><strong>Menu bar access</strong> &mdash; One click from the menu bar or Cmd+Opt+L to toggle lights. No window management, no app switching.</li>
+                <li><strong>Mac-exclusive automation</strong> &mdash; System triggers react to macOS events: lights off on sleep, on at wake, dim on display off, scene on login. No phone app offers this.</li>
+                <li><strong>Siri and Shortcuts</strong> &mdash; Native App Intents for voice control and automation. Say &ldquo;Turn on Lucis&rdquo; or build Shortcuts workflows.</li>
+                <li><strong>Privacy first</strong> &mdash; Zero analytics, zero tracking, zero third-party code. Built with 26 Swift source files and zero external dependencies.</li>
+            </ol>
+
+            <h2 id="comparison">Lucis vs Magic Home Phone App</h2>
+            <table class="compare-table">
+                <thead><tr><th>Feature</th><th>Lucis (Mac)</th><th>Magic Home (Phone)</th></tr></thead>
+                <tbody>
+                    <tr><td>Platform</td><td>macOS menu bar</td><td>iOS / Android</td></tr>
+                    <tr><td>Control without phone</td><td>Yes</td><td>No</td></tr>
+                    <tr><td>Keyboard shortcut</td><td>Cmd+Opt+L</td><td>Not available</td></tr>
+                    <tr><td>Siri on Mac</td><td>Native App Intents</td><td>Not available</td></tr>
+                    <tr><td>System triggers (sleep/wake)</td><td>Yes</td><td>Not available</td></tr>
+                    <tr><td>Cloud/account required</td><td>No</td><td>Yes</td></tr>
+                    <tr><td>Analytics/tracking</td><td>Zero</td><td>Yes</td></tr>
+                    <tr><td>Works offline</td><td>Yes</td><td>Partial</td></tr>
+                    <tr><td>Price</td><td>$1.99 one-time</td><td>Free with ads</td></tr>
+                </tbody>
+            </table>
+
+            <h2 id="faq">Frequently Asked Questions</h2>
+
+            <div class="faq-item">
+                <h3>What is the best app to control Magic Home LED strips from a Mac?</h3>
+                <p>Lucis is the only native macOS app designed specifically to control Magic Home, MagicHue, and LEDENET WiFi LED strips from the menu bar. It communicates directly with controllers over local WiFi using TCP on port 5577, with no cloud dependency, no account required, and no phone needed. Available on the Mac App Store for $1.99 as a one-time purchase.</p>
+            </div>
+
+            <div class="faq-item">
+                <h3>Does Lucis work without internet?</h3>
+                <p>Yes. Lucis works entirely offline. All communication happens directly between your Mac and your LED controllers over your local WiFi network using TCP commands. No internet connection, cloud servers, or user accounts are ever required. Your lighting configuration is stored only on your Mac.</p>
+            </div>
+
+            <div class="faq-item">
+                <h3>Which LED controllers are compatible with Lucis?</h3>
+                <p>Lucis is compatible with any WiFi LED controller that uses the Magic Home / LEDENET protocol on TCP port 5577. This includes controllers sold under the brands Magic Home (the world&rsquo;s most popular WiFi LED controller ecosystem), MagicHue, LEDENET, and Flux. These controllers are sold by dozens of manufacturers on Amazon, AliExpress, and electronics retailers worldwide.</p>
+            </div>
+
+            <div class="faq-item">
+                <h3>Can I control LED strips with Siri on Mac?</h3>
+                <p>Yes. Lucis integrates with Siri and the macOS Shortcuts app through native App Intents: toggle lights, turn on, and turn off. You can say &ldquo;Turn on Lucis&rdquo; to Siri or build custom automations in the Shortcuts app.</p>
+            </div>
+
+            <div class="faq-item">
+                <h3>How is Lucis different from the Magic Home phone app?</h3>
+                <p>Lucis is a native macOS app that lives in your menu bar, giving you instant LED control without reaching for your phone. It adds Mac-exclusive features not available in any phone app: macOS system triggers (lights dim when Mac sleeps, turn on at wake), a global keyboard shortcut (Cmd+Opt+L), native Siri integration on Mac, and saved scenes. Lucis also contains zero analytics and zero third-party code.</p>
+            </div>
+
+            <div class="faq-item">
+                <h3>What macOS version does Lucis require?</h3>
+                <p>Lucis requires macOS 14.0 (Sonoma) or later and supports both Apple Silicon and Intel Macs. The app is built natively with Swift and Apple frameworks with zero external dependencies &mdash; no Electron, no web wrappers. The entire app is 26 Swift source files totalling around 5,000 lines of code.</p>
             </div>
 
             <div class="divider"></div>
@@ -321,11 +502,11 @@
 
         <!-- ==================== SPANISH CONTENT ==================== -->
         <div lang="es">
-            <h2>La app de Mac que le faltaba a tus tiras LED</h2>
-            <p>Los controladores WiFi LED de Magic Home, MagicHue y LEDENET solo traen apps para m&oacute;vil. Si quieres ajustar tus luces mientras trabajas en el Mac, tienes que coger el m&oacute;vil cada vez. Lucis resuelve esto poniendo el control total de tus LED en la barra de men&uacute; de macOS, siempre a un clic de distancia.</p>
-            <p>Lucis es una aplicaci&oacute;n nativa de macOS construida &iacute;ntegramente con frameworks de Apple. Se comunica directamente con tus controladores LED a trav&eacute;s de tu red WiFi local mediante comandos TCP. Sin internet, sin servidores en la nube, sin cuentas. Tus datos nunca salen de tu Mac.</p>
+            <h2 id="sobre">La app de Mac que le faltaba a tus tiras LED</h2>
+            <p>Los controladores WiFi LED de Magic Home, MagicHue y LEDENET solo traen apps para m&oacute;vil. Aunque existen m&aacute;s de 20 apps en iOS y Android para estos controladores, Lucis es la primera y &uacute;nica opci&oacute;n nativa de macOS para controlar tus luces sin coger el m&oacute;vil.</p>
+            <p>Lucis es una aplicaci&oacute;n nativa de macOS construida con 26 archivos Swift y cero dependencias externas &mdash; sin Electron, sin web wrappers, sin CocoaPods. Se comunica directamente con tus controladores LED a trav&eacute;s de tu red WiFi local mediante comandos TCP en el puerto 5577. Sin internet, sin servidores en la nube, sin cuentas. Tus datos nunca salen de tu Mac.</p>
 
-            <h2>Funcionalidades</h2>
+            <h2 id="funcionalidades">Funcionalidades</h2>
             <div class="features-grid">
                 <div class="feature-item">
                     <span class="feature-icon" aria-hidden="true">&#x1F4A1;</span>
@@ -369,11 +550,11 @@
                 </div>
             </div>
 
-            <h2>M&uacute;ltiples dispositivos</h2>
+            <h2 id="multiples-dispositivos">M&uacute;ltiples dispositivos</h2>
             <p>Controla varias tiras LED desde un solo lugar. Lucis soporta m&uacute;ltiples dispositivos simult&aacute;neamente. Cambia entre ellos con el selector del popover, o aplica escenas y activadores que act&uacute;en sobre todas tus luces a la vez.</p>
 
-            <h2>Compatibilidad</h2>
-            <p>Lucis funciona con cualquier controlador WiFi LED que use el protocolo Magic Home / LEDENET (puerto TCP 5577). Esto incluye controladores vendidos bajo estas marcas:</p>
+            <h2 id="compatibilidad">Compatibilidad</h2>
+            <p>Lucis funciona con cualquier controlador WiFi LED que use el protocolo Magic Home / LEDENET (puerto TCP 5577). Son los controladores WiFi LED m&aacute;s vendidos del mundo, disponibles en docenas de fabricantes en Amazon y tiendas de electr&oacute;nica. Marcas compatibles:</p>
             <ul class="compat-list">
                 <li><strong>Magic Home</strong> &mdash; el ecosistema de controladores WiFi LED m&aacute;s popular del mundo</li>
                 <li><strong>MagicHue</strong> &mdash; controladores WiFi RGB y RGBWW</li>
@@ -381,15 +562,73 @@
                 <li><strong>Flux</strong> y otros controladores RGB WiFi gen&eacute;ricos en TCP 5577</li>
             </ul>
 
-            <h2>Privacidad por dise&ntilde;o</h2>
-            <p>Lucis no contiene anal&iacute;tica, ni rastreo, ni c&oacute;digo de terceros. Toda la comunicaci&oacute;n permanece en tu red WiFi local. La configuraci&oacute;n de tus luces se almacena &uacute;nicamente en tu Mac. Lee la <a href="privacy.html">pol&iacute;tica de privacidad</a> completa.</p>
+            <h2 id="privacidad">Privacidad por dise&ntilde;o</h2>
+            <p>Lucis no contiene anal&iacute;tica, ni rastreo, ni c&oacute;digo de terceros. La app est&aacute; construida &uacute;nicamente con los frameworks nativos de Apple (SwiftUI, AppKit, Network). Toda la comunicaci&oacute;n permanece en tu red WiFi local. La configuraci&oacute;n de tus luces se almacena &uacute;nicamente en tu Mac. Lee la <a href="privacy.html">pol&iacute;tica de privacidad</a> completa.</p>
 
-            <h2>Requisitos del sistema</h2>
+            <h2 id="requisitos">Requisitos del sistema</h2>
             <div class="req-box">
                 <p><strong>macOS:</strong> 14.0 (Sonoma) o posterior</p>
                 <p><strong>Procesador:</strong> Apple Silicon o Intel</p>
                 <p><strong>Red:</strong> WiFi &mdash; Mac y controladores LED en la misma red local</p>
                 <p><strong>Internet:</strong> No necesario. Lucis funciona completamente sin conexi&oacute;n.</p>
+            </div>
+
+            <h2 id="por-que-lucis">Por qu&eacute; Lucis es la mejor app de Mac para controlar LEDs WiFi</h2>
+            <ol class="why-list">
+                <li><strong>&Uacute;nica opci&oacute;n nativa de macOS</strong> &mdash; Lucis es la &uacute;nica app en la Mac App Store dise&ntilde;ada espec&iacute;ficamente para controladores WiFi LED Magic Home / LEDENET. No existe otra alternativa nativa para Mac.</li>
+                <li><strong>Sin nube, sin cuentas</strong> &mdash; A diferencia de las apps de m&oacute;vil que requieren registro en la nube, Lucis se comunica directamente con tus controladores por WiFi local usando TCP en el puerto 5577. Tus datos nunca salen de tu Mac.</li>
+                <li><strong>Acceso desde la barra de men&uacute;</strong> &mdash; Un clic desde la barra de men&uacute; o Cmd+Opt+L para encender y apagar. Sin gestionar ventanas, sin cambiar de app.</li>
+                <li><strong>Automatizaci&oacute;n exclusiva de Mac</strong> &mdash; Los activadores del sistema reaccionan a eventos de macOS: luces apagadas al dormir, encendidas al despertar, atenuadas al apagar la pantalla, escena al iniciar sesi&oacute;n. Ninguna app de m&oacute;vil ofrece esto.</li>
+                <li><strong>Siri y Atajos</strong> &mdash; App Intents nativos para control por voz y automatizaci&oacute;n. Di &laquo;Enciende Lucis&raquo; o crea flujos en la app Atajos.</li>
+                <li><strong>Privacidad ante todo</strong> &mdash; Cero anal&iacute;tica, cero rastreo, cero c&oacute;digo de terceros. Construida con 26 archivos Swift y cero dependencias externas.</li>
+            </ol>
+
+            <h2 id="comparativa">Lucis vs app Magic Home para m&oacute;vil</h2>
+            <table class="compare-table">
+                <thead><tr><th>Caracter&iacute;stica</th><th>Lucis (Mac)</th><th>Magic Home (M&oacute;vil)</th></tr></thead>
+                <tbody>
+                    <tr><td>Plataforma</td><td>Barra de men&uacute; macOS</td><td>iOS / Android</td></tr>
+                    <tr><td>Control sin m&oacute;vil</td><td>S&iacute;</td><td>No</td></tr>
+                    <tr><td>Atajo de teclado</td><td>Cmd+Opt+L</td><td>No disponible</td></tr>
+                    <tr><td>Siri en Mac</td><td>App Intents nativos</td><td>No disponible</td></tr>
+                    <tr><td>Activadores del sistema (reposo/despertar)</td><td>S&iacute;</td><td>No disponible</td></tr>
+                    <tr><td>Requiere nube/cuenta</td><td>No</td><td>S&iacute;</td></tr>
+                    <tr><td>Anal&iacute;tica/rastreo</td><td>Cero</td><td>S&iacute;</td></tr>
+                    <tr><td>Funciona sin internet</td><td>S&iacute;</td><td>Parcial</td></tr>
+                    <tr><td>Precio</td><td>1,99&nbsp;$ (pago &uacute;nico)</td><td>Gratis con anuncios</td></tr>
+                </tbody>
+            </table>
+
+            <h2 id="preguntas-frecuentes">Preguntas frecuentes</h2>
+
+            <div class="faq-item">
+                <h3>Cu&aacute;l es la mejor app para controlar tiras LED Magic Home desde un Mac?</h3>
+                <p>Lucis es la &uacute;nica app nativa de macOS dise&ntilde;ada espec&iacute;ficamente para controlar tiras LED WiFi Magic Home, MagicHue y LEDENET desde la barra de men&uacute;. Se comunica directamente con los controladores por WiFi local usando TCP en el puerto 5577, sin depender de la nube, sin necesitar cuenta y sin m&oacute;vil. Disponible en la Mac App Store por 1,99&nbsp;$ como compra &uacute;nica.</p>
+            </div>
+
+            <div class="faq-item">
+                <h3>Lucis funciona sin internet?</h3>
+                <p>S&iacute;. Lucis funciona completamente sin conexi&oacute;n a internet. Toda la comunicaci&oacute;n se produce directamente entre tu Mac y tus controladores LED a trav&eacute;s de tu red WiFi local mediante comandos TCP. No se necesitan conexi&oacute;n a internet, servidores en la nube ni cuentas de usuario. La configuraci&oacute;n de tus luces se almacena &uacute;nicamente en tu Mac.</p>
+            </div>
+
+            <div class="faq-item">
+                <h3>Qu&eacute; controladores LED son compatibles con Lucis?</h3>
+                <p>Lucis es compatible con cualquier controlador WiFi LED que use el protocolo Magic Home / LEDENET en el puerto TCP 5577. Esto incluye controladores vendidos bajo las marcas Magic Home (el ecosistema de controladores WiFi LED m&aacute;s popular del mundo), MagicHue, LEDENET y Flux. Estos controladores se venden por docenas de fabricantes en Amazon, AliExpress y tiendas de electr&oacute;nica de todo el mundo.</p>
+            </div>
+
+            <div class="faq-item">
+                <h3>Se pueden controlar tiras LED con Siri en Mac?</h3>
+                <p>S&iacute;. Lucis se integra con Siri y la app Atajos de macOS a trav&eacute;s de App Intents nativos: alternar luces, encender y apagar. Puedes decir &laquo;Enciende Lucis&raquo; a Siri o crear automatizaciones personalizadas en la app Atajos.</p>
+            </div>
+
+            <div class="faq-item">
+                <h3>En qu&eacute; se diferencia Lucis de la app Magic Home para m&oacute;vil?</h3>
+                <p>Lucis es una app nativa de macOS que vive en tu barra de men&uacute;, dando control instant&aacute;neo de tus LED sin coger el m&oacute;vil. A&ntilde;ade funcionalidades exclusivas de Mac no disponibles en ninguna app de m&oacute;vil: activadores del sistema (las luces se aten&uacute;an al dormir el Mac, se encienden al despertar), un atajo de teclado global (Cmd+Opt+L), integraci&oacute;n nativa con Siri en Mac y escenas guardadas. Adem&aacute;s, Lucis no contiene anal&iacute;tica ni c&oacute;digo de terceros.</p>
+            </div>
+
+            <div class="faq-item">
+                <h3>Qu&eacute; versi&oacute;n de macOS necesita Lucis?</h3>
+                <p>Lucis requiere macOS 14.0 (Sonoma) o posterior y es compatible con Apple Silicon e Intel. La app est&aacute; construida nativamente con Swift y frameworks de Apple sin ninguna dependencia externa &mdash; sin Electron, sin web wrappers. Son 26 archivos Swift con unas 5.000 l&iacute;neas de c&oacute;digo en total.</p>
             </div>
 
             <div class="divider"></div>
